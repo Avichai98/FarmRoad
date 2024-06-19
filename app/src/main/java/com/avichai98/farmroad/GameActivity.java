@@ -32,11 +32,11 @@ public class GameActivity extends AppCompatActivity {
     private AppCompatImageView[][] game_IMG_objects;
     private AppCompatImageView[] game_IMG_hearts;
     private MaterialTextView game_LBL_score;
-    private MaterialButton game_BTN_left;;
+    private MaterialButton game_BTN_left;
     private MaterialButton game_BTN_right;
-
     private GameManager gameManager;
     private PlaySound playSound;
+    private int currentScore;
     private final Handler handler = new Handler();
     private final Runnable runnable = new Runnable() {
         public void run() {
@@ -168,6 +168,7 @@ public class GameActivity extends AppCompatActivity {
                 .setMessage("Do you want to continue?")
                 .setPositiveButton("Yes", (dialog, which) -> continueTheGame())
                 .setNegativeButton("No", (dialog, which) -> lose())
+                .setCancelable(false)
                 .show();
     }
 
@@ -199,6 +200,7 @@ public class GameActivity extends AppCompatActivity {
         }
     }
     private void tick() {
+        this.currentScore = gameManager.getScore();
         gameManager.tick();
         updateCowUi();
         updateLivesUI();
@@ -213,6 +215,9 @@ public class GameActivity extends AppCompatActivity {
             playSound.playSound(R.raw.cow_breath_collision);
             Toast.makeText(this, "You killed a cow!", Toast.LENGTH_SHORT).show();
         }
-        game_LBL_score.setText(String.valueOf(gameManager.getScore()));
+        if (this.currentScore < gameManager.getScore()) {
+            game_LBL_score.setText(String.valueOf(gameManager.getScore()));
+            playSound.playSound(R.raw.cowbell_add_score);
+        }
     }
 }
