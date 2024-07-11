@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -29,6 +30,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -40,4 +45,18 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation(libs.play.services.maps)
+
+    //gson
+    implementation(libs.gson)
+
+    //Glide:
+    implementation(libs.github.glide)
+
+    implementation(libs.play.services.location)
+    implementation(libs.play.services.maps.v1820)
+    androidTestImplementation(libs.junit.v121)
+
+    androidTestImplementation(libs.espresso.core.v361)
+    annotationProcessor (libs.compiler)
 }
