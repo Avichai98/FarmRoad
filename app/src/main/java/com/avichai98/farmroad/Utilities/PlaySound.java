@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
 
 public class PlaySound {
     private final Context context;
-    private final Executor executor;;
+    private final Executor executor;
 
 
     public PlaySound(Context context) {

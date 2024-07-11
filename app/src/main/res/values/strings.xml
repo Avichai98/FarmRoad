@@ -13,4 +13,7 @@
     <string name="enter_your_name">Enter your name</string>
     <string name="home">Home</string>
     <string name="hour">"     Hour"</string>
+    <string name="top_10">TOP 10</string>
+    <string name="date">Date</string>
+    <string name="score">Score</string>
 </resources>

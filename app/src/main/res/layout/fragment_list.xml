@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Manager.RecordsFragmentList"
@@ -11,9 +10,9 @@
         android:id="@+id/list_LBL_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TOP 10"
+        android:text="@string/top_10"
         android:textStyle="italic"
-        android:textSize="50dp"
+        android:textSize="50sp"
         android:layout_marginTop="60dp"
         android:layout_centerHorizontal="true"
         android:textColor="#3F51B5" />
@@ -32,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="right"
-            android:text="Date"
+            android:text="@string/date"
             android:textColor="#3F51B5"
             android:textSize="30sp">
 
@@ -54,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Score"
+            android:text="@string/score"
             android:textColor="#3F51B5"
             android:textSize="30sp">
 
