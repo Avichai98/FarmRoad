@@ -259,7 +259,8 @@ public class GameActivity extends AppCompatActivity {
     private void continueTheGame(){
         gameManager.setLives(3);
         updateLivesUI();
-        moveDetector.start();
+        if(!isArrows)
+            moveDetector.start();
         handler.postDelayed(runnable, DELAY);
     }
     private void lose() {
@@ -305,7 +306,7 @@ public class GameActivity extends AppCompatActivity {
             playSound.playSound(R.raw.cow_breath_collision);
             Toast.makeText(this, "You killed a cow!", Toast.LENGTH_SHORT).show();
         } else if (gameManager.getCollision() == 2) {
-            vibrate(1000);
+            vibrate(500);
             playSound.playSound(R.raw.boost_score);
             Toast.makeText(this, "Good job!\nYou got hay!", Toast.LENGTH_SHORT).show();
         }

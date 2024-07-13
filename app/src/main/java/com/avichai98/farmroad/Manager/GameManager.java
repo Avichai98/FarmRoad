@@ -7,7 +7,7 @@ import java.util.Random;
 public class GameManager {
     public static final String RECORDSLIST = "RECORDSLIST";
     public static int DELAY = 1000;
-    public static final int ROWS = 6;
+    public static final int ROWS = 8;
     public static final int COLS = 5;
     public static final int EMPTY = 0;
     public static final int COW = 1;
